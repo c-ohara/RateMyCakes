@@ -1,0 +1,12 @@
+<h1>Rate my cakes!</h1>
+<div class = "col-5 border border-dark m-1 d-inline-block align-top">
+    <app-newcake [allCakes]="allCakes"></app-newcake>
+</div>
+<div class = "border border-dark m-1 d-inline-block align-top col-6 scroll-spy" data-spy="scroll">
+    <div *ngFor="let cake of allCakes">
+        <a (click)="Display(cake._id)"><app-allcakes [currentCake]="cake"></app-allcakes></a>
+    </div>
+</div>
+<div *ngIf="currentCake" class = "border border-dark m-1 d-inline-block col-12">
+    <app-onecake [currentCake]="currentCake"></app-onecake>
+</div>

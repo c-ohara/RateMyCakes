@@ -1,0 +1,13 @@
+<h1>Baked by {{ currentCake.Baker }}</h1>
+<div class = "row">
+    <div class = "col-6 p-1 d-inline-block mx-3">
+        <img [src]="currentCake.ImageUrl" class = "w-100">
+    </div>
+    <div class = "col-5">
+        <h3>Average rating: {{ average }} stars</h3>
+        <div *ngFor="let comment of currentCake.Comments" class = "d-block my-3">
+            <h3>{{ comment.Content }}</h3>
+            <h3>{{ comment.Rating }} stars</h3>
+        </div>
+    </div>
+</div>

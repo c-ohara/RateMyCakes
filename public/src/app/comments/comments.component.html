@@ -1,0 +1,14 @@
+<div *ngIf="valmessages.length > 0">
+    <p *ngFor="let message of valmessages">{{message}}</p>
+</div>
+<form (submit)="Create()" class="py-3">
+    <select name = "Rating" [(ngModel)]="newComment.Rating" class = "w-md-50 w-sm-100">
+        <option value = 1>1 star</option>
+        <option value = 2>2 stars</option>
+        <option value = 3>3 stars</option>
+        <option value = 4>4 stars</option>
+        <option value = 5>5 stars</option>
+    </select>
+    <input type="text" name="Content" [(ngModel)]="newComment.Content" class = "form-control my-5" placeholder="Type your comment here">
+    <input type="submit" value="Rate" class = "rate d-block btn text-white px-4 mt-5">
+</form>
